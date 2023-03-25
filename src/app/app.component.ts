@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'shop-unc-ang';
+  //Variables (1)
+  public title : string  = 'Hola mundo'; //Explicito public/private(No puede usarse en html) 
+  nombre = 'Jaimito'; //Implicito
+  
+  //Constructor (3)
+  constructor(){
+    this.nombre = "Cristian";
+  }
+
+  //Metodos (2)
+  public holaSoyUnaFuncion(){
+    this.nombre = "Mendoza"
+  }
 }
