@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CiclosDeVidaComponent } from './clase/ciclos-de-vida/ciclos-de-vida.component';
 import { ComponentesComponent } from './clase/componentes/componentes.component';
+import { BindingsComponent } from './clase/bindings/bindings.component';
+import { FormsModule } from '@angular/forms';
+import { CalculadoraComponent } from './clase/calculadora/calculadora.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComponentesComponent,
-    CiclosDeVidaComponent
+    CiclosDeVidaComponent,
+    BindingsComponent,
+    CalculadoraComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

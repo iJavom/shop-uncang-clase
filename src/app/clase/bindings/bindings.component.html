@@ -1,0 +1,58 @@
+<hr>
+<h3>Hola soy component binding</h3>
+<div class="row">
+    <div class="col-md-9">
+        <h3>Interpolación</h3>
+        <br>
+        <p>Un mecanismo para poder sustituir una expresion por un valor y nos apoyaremos de los caracteres doble llaves dentro se encuentra la expresion </p>
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo:</h4>
+        <p>1) {{ejemploInterpolacion}}</p>
+        <p>2) {{2+2}}</p>
+        <p>3) {{retornoInterpolacion()}}</p>
+        <!-- <p>x) {{ejemploInterpolacion='Me cambie'}}</p> -->
+        
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-9">
+        <h3>Property binding (Enlace de propiedades)</h3>
+        <p>Es el enlace que se hace para las propiedades con la sintaxis de [propiedad]="expresion" </p>
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo: </h4>
+        <button class="btn btn-primary" [disabled]="botonDesactivado">Boton</button>
+        <span class="badge text-bg-primary" [hidden]="placaOculta">Primary</span>
+        <img class="img-w100" [src]="imgUrl">
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-9">
+        <h3>Event binding (enlace de eventos)</h3>
+        <p>Es un enlace de eventos para que cualquier eventualidad se pueda ver reflejada en el controlador y su sintaxis es de la siguiente forma (evento)="nombreFuncion()"</p>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary" (click)="mostrarMensajeConsoleLog(ejemploInterpolacion)">Aprietame</button>
+        <input type="text" (blur)="metodoEjemploEvent($event)">
+    </div>
+
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-9">
+        <h3>Two way binding (Enlace bidireccional)</h3>
+        <p>Es una forma de tener una comunicacion del modelo de un formulario y nos permite la comuniacion en ambos sentidos. Usa la sintaxis [(ngModel)]="variable"</p>
+    </div>
+    <div class="col-md-3">
+        <label for="">Nombre de producto</label>
+        <input type="text" id="nombreProductoId" placeholder="Inserte Su producto"
+        name="nombreProducto"
+        [(ngModel)]="twoProducto"
+        >
+        {{twoProducto}}
+        <button (click)="borrarInput()">Limpiar</button>
+    </div>
+</div>

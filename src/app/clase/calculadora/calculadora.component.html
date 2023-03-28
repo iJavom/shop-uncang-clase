@@ -1,0 +1,57 @@
+<div>
+  <h1>Ejemplo calculadora bindings</h1>
+  <label for="">Valor 1:</label>
+  <input type="number" name="valorUno" [(ngModel)]="valorUno" />
+  <label for="">Valor 2:</label>
+  <input type="number" name="valorDos" [(ngModel)]="valorDos" />
+  <br />
+  <button (click)="sumar()">Sumar</button>
+  <button (click)="restar()">Restar</button>
+  <button (click)="multiplicar()">Multiplicar</button>
+  <button (click)="dividir()">Dividir</button>
+  <br />
+  <p>
+    Resultado es:
+    <span [hidden]="valorUno == 0 && valorDos == 0">{{ resultado }}</span>
+  </p>
+</div>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Ejemplo calculadora bindings</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <button class="btn btn-primary" (click)="tomarNumero('7')">7</button
+        ><button class="btn btn-primary" (click)="tomarNumero('8')">8</button
+        ><button class="btn btn-primary" (click)="tomarNumero('9')">9</button
+        ><button class="btn btn-primary" (click)="realizarOperacion('+')">+</button>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+          <button class="btn btn-primary" (click)="tomarNumero('4')">4</button
+          ><button class="btn btn-primary" (click)="tomarNumero('5')">5</button
+          ><button class="btn btn-primary" (click)="tomarNumero('6')">6</button
+          ><button class="btn btn-primary" (click)="realizarOperacion('-')">-</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+          <button class="btn btn-primary" (click)="tomarNumero('1')">1</button
+          ><button class="btn btn-primary" (click)="tomarNumero('2')">2</button
+          ><button class="btn btn-primary" (click)="tomarNumero('3')">3</button
+          ><button class="btn btn-primary" (click)="realizarOperacion('*')">*</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+          <button class="btn btn-primary" (click)="tomarNumero('0')">0</button
+          ><button class="btn btn-primary" (click)="realizarOperacion('.')">.</button
+          ><button class="btn btn-primary" (click)="realizarOperacion('=')">=</button
+          ><button class="btn btn-primary" (click)="realizarOperacion('/')">/</button>
+        </div>
+    </div>
+    <div class="row">
+        <input type="text" [(ngModel)]="caracteresApretados">
+    </div>
+</div>
