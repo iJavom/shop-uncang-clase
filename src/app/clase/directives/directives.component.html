@@ -1,0 +1,124 @@
+<hr>
+<div class="row">
+    <h3>Directives</h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>
+            Es una herramienta que nos proporciona angular para dar comportamientos adicionales a nuestros elementos en el DOM (Document Object Model / Modelo del objeto de documento)
+        </p>   
+        <h5>Tipos de directivas</h5>
+        <ul>
+            <li>Component directives: Estas son las directivas mas comunes y son los que definen plantillas, estilos y comportamiento para el DOM</li>
+            <li>Structural directives: Estas nos sirven para cambiar el diseño de nuestro DOM. Un ejemplo puede ser: *ngIf</li>
+            <li>Attribute Directives: Cambiar el estilo de un elemento. Ejemplo: NgClass</li>
+        </ul>
+
+
+    </div>
+    <div class="col-md-3">
+        <h4>Mas populares </h4>
+        <ul>
+            <li>Structural Directives: *ngIf , *ngFor , * ngSwitch</li>
+            <li>Attribute Directives: NgClass y NgStyle</li>
+        </ul>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <h3>*ngIf</h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>Se utiliza para definir si se renderiza o no en el template nuestro elemento</p>
+        <br>
+        <p>
+            Su sintaxis es la siguiente en el elemento ponemos como atributo *ngIf="Condicion"
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo</h4>
+        <div  *ngIf="variableBool">
+            <input type="text" placeholder="Desaparezco si aprietas el boton">
+        </div>
+        <button class="btn btn-primary" (click)="this.variableBool = !this.variableBool">Hago magia</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <h3>*ngFor</h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p> Es una directiva que se usa para iterar sobre una coleccion o array y renderizar cada elemento de este.
+
+        Su sintaxis es *ngFor="let elemento of coleccion; let i = index"
+        </p>
+    </div>
+    <div class="col-md-3">
+        <ul>
+            <div *ngFor="let usuario of listaUsuarios;let i=index">
+                <li *ngIf="i%2!=0">
+                    {{i}}. El usuario #{{usuario.id}} es {{usuario.usuario}}
+                </li>
+            </div>
+
+        </ul>
+        <!-- nota: Si queremos anidar un ngIf con un ngContainer podemos separarlos haciendo uso de otro elemento (Consejo: usar ng-container) -->
+    </div>
+
+</div>
+<hr>
+<div class="row">
+    <h3>*ngSwitch</h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        Permite agregar o eliminar elementos del dom dependiendo de una expresion. Y la sintaxis consta de 3 directivas 
+        [ngSwitch]="Expresion"
+        *ngSwitchCase="valor"
+        *ngSwitchDefault 
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo:</h4>
+        <div [ngSwitch]="status">
+            <p *ngSwitchCase="'En proceso'">Su pedido esta en proceso</p>
+            <p *ngSwitchCase="'Listo'">Su pedido esta listo</p>
+            <p *ngSwitchCase="'Entregado'"> Su pedido esta entregado</p>
+            <p *ngSwitchDefault>Estado desconocido</p>
+        </div>
+    </div>
+
+</div>
+<hr>
+<div class="row">
+    <h3>NgClass - Directivas de atributos </h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>El ngClass sirve para añadir, eliminar o modificar directamente el atributo class</p>
+        <br>
+        <p>La sintaxis de la directiva es [ngClass]="'class-name' : expresion "</p>
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo</h4>
+        <button [ngClass]="{'bg-chocolate':booleanoNgClass, 'btn-primary':false}" (click)="booleanoNgClass = !booleanoNgClass" >Hola cambio de color </button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <h3>NgStyle - Directiva de atributos</h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>El ngClass sirve para dar valores a propiedades de css</p>
+        <br>
+        <p>la sintaxis es dentro del elemento se agrega [ngStyle]="'background-color':variableBG, 'color':valorColor "</p>
+
+    </div>
+
+    <div class="col-md-3">
+        <h4>Ejemplo:</h4>
+        <button [ngStyle]="objetoParaNgStyle">Hola soy un boton con ngStyle</button>
+    </div>
+</div>

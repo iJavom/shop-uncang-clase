@@ -1,8 +1,16 @@
-<div class="container clase">
+<div *ngIf="capturoElEnvironment" class="container clase">
+    
     <!-- el container sirve para mantener uniforme el ancho   -->
     <!-- <app-componentes></app-componentes>
     <app-bindings></app-bindings>
-    <app-ciclos-de-vida></app-ciclos-de-vida> -->
-    <app-calculadora></app-calculadora>
+     -->
+    <!-- <app-calculadora></app-calculadora> -->
+    <!-- <app-directives></app-directives> -->
+    <app-ciclos-de-vida></app-ciclos-de-vida>
+
+</div>
+
+<div *ngIf="!capturoElEnvironment">
+    <!-- Aqui podemos empezar a hacer la tienda -->
 </div>
 

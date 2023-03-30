@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../environments/environment'
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ export class AppComponent {
   //Variables (1)
   public title : string  = 'Hola mundo'; //Explicito public/private(No puede usarse en html) 
   nombre = 'Jaimito'; //Implicito
-  
+  capturoElEnvironment = environment.leccion;
   //Constructor (3)
   constructor(){
     this.nombre = "Cristian";

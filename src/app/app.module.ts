@@ -8,6 +8,7 @@ import { ComponentesComponent } from './clase/componentes/componentes.component'
 import { BindingsComponent } from './clase/bindings/bindings.component';
 import { FormsModule } from '@angular/forms';
 import { CalculadoraComponent } from './clase/calculadora/calculadora.component';
+import { DirectivesComponent } from './clase/directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CalculadoraComponent } from './clase/calculadora/calculadora.component'
     ComponentesComponent,
     CiclosDeVidaComponent,
     BindingsComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
