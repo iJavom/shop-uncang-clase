@@ -1,0 +1,41 @@
+<div class="row">
+    <h3>Referencias locales y Comunicacion entre Componentes </h3>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-9">
+        <h3>Referencias locales</h3>
+        <p>Variables que definimos en nuestro template de angular. Gracias a ella podremos hacer referencia a los elementos del DOM o componentes y directivas. Podremos usar propiedades y metodos de los seleccionados. Para definirlo podemos usar el atributo #nombreReferencia</p>
+    </div>
+
+    <div class="col-md-3">
+        <h4>Ejemplo:</h4>
+        <input #inputReferenciaLocal type="text" placeholder="Escribe algo">
+        <button (click)="imprimirAlerta(inputReferenciaLocal)">Imprime alerta</button>
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-md-9">
+        <h3>@Input (property binding)</h3>
+        <p>Es un decorador que nos permite que el componente padre pueda transmitir un dato al componente hijo, funcionara como un property binding personalizado (depende del nombre de la variable)</p>
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo:</h4>
+        <h5>{{ unValorDelPadre }}</h5>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-9">
+        <h3>@Output (event binding)</h3>
+        <p>Es un decorador que nos permite que el componente hijo pueda comunicarse con el componente padre, funciona como un event binding en el padre y del mismo que el input se llamara como se defina en el hijo</p>
+    </div>
+
+    <div class="col-md-3">
+        <h4>Ejemplo:</h4>
+        <button (click)="emitirEvento()">Avisar al padre</button>
+    </div>
+</div>

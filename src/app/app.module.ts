@@ -9,6 +9,14 @@ import { BindingsComponent } from './clase/bindings/bindings.component';
 import { FormsModule } from '@angular/forms';
 import { CalculadoraComponent } from './clase/calculadora/calculadora.component';
 import { DirectivesComponent } from './clase/directives/directives.component';
+import { ComunicacionComponentesComponent } from './clase/comunicacion-componentes/comunicacion-componentes.component';
+import { ClaseComponent } from './clase/clase.component';
+import { ShoppingComponent } from './shopping/shopping.component';
+import { NavbarComponent } from './shopping/navbar/navbar.component';
+import { InicioComponent } from './shopping/inicio/inicio.component';
+import { TiendaComponent } from './shopping/tienda/tienda.component';
+import { NosotrosComponent } from './shopping/nosotros/nosotros.component';
+import { ContactanosComponent } from './shopping/contactanos/contactanos.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +25,15 @@ import { DirectivesComponent } from './clase/directives/directives.component';
     CiclosDeVidaComponent,
     BindingsComponent,
     CalculadoraComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    ComunicacionComponentesComponent,
+    ClaseComponent,
+    ShoppingComponent,
+    NavbarComponent,
+    InicioComponent,
+    TiendaComponent,
+    NosotrosComponent,
+    ContactanosComponent
   ],
   imports: [
     BrowserModule,

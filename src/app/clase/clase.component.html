@@ -1,0 +1,12 @@
+    <!-- el container sirve para mantener uniforme el ancho   -->
+    <app-componentes></app-componentes>
+    <app-bindings></app-bindings>
+    
+    <app-calculadora></app-calculadora> 
+    <app-directives></app-directives>
+    <app-ciclos-de-vida></app-ciclos-de-vida>
+    <app-comunicacion-componentes #componentHijo [unValorDelPadre]="nombre" (unEventoParaElPadre)="funcionEnPadre($event)"></app-comunicacion-componentes>
+
+
+    <button (click)="holaSoyUnaFuncion()">Soy parte del componente padre</button>
+    <button (click)="componentHijo.imprimirAlerta('Hola me llamaron desde el padre')">Soy parte del padre y llamo una funcion del hijo</button>
