@@ -1,0 +1,10 @@
+<div class="bg-info">
+    <h5>Hola soy un ruteo ejemplo y pertenezco a otro componente</h5>
+    <button [routerLink]="'/clase/'">clickame para quitar de ruta en la url</button>
+    <ng-container *ngIf="paramPorRuta !=null">
+        <h1 >Apareci aqui porque vine con param y mi mensaje es:</h1>
+        <h3>{{paramPorRuta}}</h3>
+    </ng-container>
+    
+</div>
+

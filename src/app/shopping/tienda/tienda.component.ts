@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tienda',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tienda.component.css']
 })
 export class TiendaComponent implements OnInit {
+  
+  paramPorRuta : any;
 
-  constructor() { }
+  constructor( private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params)=>{
+      this.paramPorRuta = params.get('parametro');
+      
+    });
   }
 
 }

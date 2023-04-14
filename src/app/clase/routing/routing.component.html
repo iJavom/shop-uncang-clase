@@ -1,0 +1,74 @@
+<div class="row">
+  <h3>Routing Angular</h3>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <p>
+      El routing de angular es un modulo de angular que nos permite aprovechar
+      el direccionamiento de los navegadores para ir definiendo que componente
+      iremos mostrando o modulos que vamos a ir cargando.
+    </p>
+    <br />
+    <p>
+      Se apoya de los modulos para definir y se declara como un archivo
+      nombre-routing.module.ts que a su vez se invoca en el modulo al que le
+      hace pareja.
+    </p>
+
+    <p>
+      Dentro del archivo "xxx-routing.module.ts" encontraremos una constante que
+      es un array de donde ira estructurado los componentes o modulos que ira
+      cargando, asi como a su vez los posibles hijos de estos.
+    </p>
+    <br />
+    <p>la estructura es un objeto que puede contener</p>
+    <br />
+    <p>
+      el path , el componente y los hijos (siendo este ultimo opcional que a su
+      vez puede invocar otros paths)... Ver ejemplo en app-routing.module.ts
+    </p>
+    <br />
+    <p>
+      una vez definido los paths es importante usar la directiva router-outlet
+      sobre los componentes para indicar que ahi es donde se hara uso del
+      routing.
+    </p>
+
+    <br />
+    <p>
+      Adicional gracias al atributo routerLink o en el ts al modulo importado de
+      router con su metodo navigate podremos desplazarnos por nuestra aplicacion
+    </p>
+    <br />
+    <p>
+      y gracias al uso del atributo routerLinkActive podremos añadir o quitar
+      clases a nuestros elementos
+    </p>
+  </div>
+  <div class="col-md-3">
+    <h4>Ejemplo:</h4>
+    <button [routerLink]="'/clase/ejemplo'" [routerLinkActive]="'hidden'">
+      clickame para cambiar de ruta en la url
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<hr />
+<div class="row">
+  <h3>parametros en ruta</h3>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <p>
+      Si nosotros lo deseamos podemos añadir la nomenclatura ":nombre-parametro"
+      dentro nueestro path en el archivo router de este modo podremos pasar
+      algun parametro y gracias al module ActivatedRoute podremos darle uso
+    </p>
+  </div>
+  <div class="col-md-3">
+        <h4>Ejemplo ver arriba pero presionar boton de abajo: </h4>
+        <input [(ngModel)]="inputRouting" type="text">
+        <button [routerLink]="'/clase/ejemplo/'+ inputRouting">Aprietame para cambiar link con parametro</button>
+  </div>
+</div>

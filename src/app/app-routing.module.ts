@@ -7,6 +7,7 @@ import { InicioComponent } from './shopping/inicio/inicio.component';
 import { TiendaComponent } from './shopping/tienda/tienda.component';
 import { NosotrosComponent } from './shopping/nosotros/nosotros.component';
 import { ContactanosComponent } from './shopping/contactanos/contactanos.component';
+import { RuteoEjemploComponent } from './clase/routing/ruteo-ejemplo/ruteo-ejemplo.component';
 
 const routes: Routes = [
   //1.- Rutas especificas: Hay rutas que pueden llevar parametros y estas son las primeras que deben ser declaradas
@@ -15,23 +16,33 @@ const routes: Routes = [
   //4.- Rutas anidadas: Que son aquellas rutas que importan modulos
   //5.- Ruta 404 / No se consiguio : Que es para donde se redirige la aplicacion en caso de no conseguir rutas
 
+  //ELEMENTOS DEL ARRAY QUE FORMAN PARTE DEL A TIENDA
   {
     path: 'shopping',
     component: ShoppingComponent,
     children: [
+      { path: 'tienda/:parametro', component: TiendaComponent},
       { path: 'inicio', component: InicioComponent },
       { path: 'tienda', component: TiendaComponent },
       { path: 'nosotros', component: NosotrosComponent },
       { path: 'contactanos', component: ContactanosComponent },
     ],
   },
-  { path: 'clase', component: ClaseComponent },
+
+
+  //ELEMENTOS DEL ARRAY QUE LLEVAN LA CLASE
+  { path: 'clase', component: ClaseComponent, children:[
+    {path: 'ejemplo/:paramPorRuta', component: RuteoEjemploComponent},
+    {path: 'ejemplo', component: RuteoEjemploComponent}
+  ] },
+
+  //CASOS ESPECIFICOS
   { path: '', component: ShoppingComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

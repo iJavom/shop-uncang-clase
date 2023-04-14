@@ -18,10 +18,21 @@ import { TiendaComponent } from './shopping/tienda/tienda.component';
 import { NosotrosComponent } from './shopping/nosotros/nosotros.component';
 import { ContactanosComponent } from './shopping/contactanos/contactanos.component';
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
+import { RoutingComponent } from './clase/routing/routing.component';
+import { RuteoEjemploComponent } from './clase/routing/ruteo-ejemplo/ruteo-ejemplo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    //Shopping componentes
+    ShoppingComponent,
+    NavbarComponent,
+    InicioComponent,
+    TiendaComponent,
+    NosotrosComponent,
+
+    //Clases componentes
     ComponentesComponent,
     CiclosDeVidaComponent,
     BindingsComponent,
@@ -29,20 +40,20 @@ import { NotFoundComponent } from './shared/component/not-found/not-found.compon
     DirectivesComponent,
     ComunicacionComponentesComponent,
     ClaseComponent,
-    ShoppingComponent,
-    NavbarComponent,
-    InicioComponent,
-    TiendaComponent,
-    NosotrosComponent,
     ContactanosComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RoutingComponent,
+    RuteoEjemploComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

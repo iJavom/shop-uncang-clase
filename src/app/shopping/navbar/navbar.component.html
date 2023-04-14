@@ -17,8 +17,9 @@
         <a
           class="nav-link"
           *ngFor="let navItem of navItems; let i = index"
-          [ngClass]="{ active: navItem.active, disabled: navItem.disabled }"
-          [routerLink]="navItem.link"
+          [ngClass]="{ disabled: navItem.disabled }"
+          [routerLinkActive]="'active'"
+          [routerLink]="'/shopping/'+navItem.link"
         >
         <!-- <a
         class="nav-link"
