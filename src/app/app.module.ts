@@ -20,6 +20,9 @@ import { ContactanosComponent } from './shopping/contactanos/contactanos.compone
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 import { RoutingComponent } from './clase/routing/routing.component';
 import { RuteoEjemploComponent } from './clase/routing/ruteo-ejemplo/ruteo-ejemplo.component';
+import { DataEjemploService } from './shared/service/data-ejemplo.service';
+import { TarjetaComponent } from './shopping/tienda/tarjeta/tarjeta.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { RuteoEjemploComponent } from './clase/routing/ruteo-ejemplo/ruteo-ejemp
     InicioComponent,
     TiendaComponent,
     NosotrosComponent,
+    TarjetaComponent,
 
     //Clases componentes
     ComponentesComponent,
@@ -43,16 +47,18 @@ import { RuteoEjemploComponent } from './clase/routing/ruteo-ejemplo/ruteo-ejemp
     ContactanosComponent,
     NotFoundComponent,
     RoutingComponent,
-    RuteoEjemploComponent
+    RuteoEjemploComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-
+    DataEjemploService
   ],
   bootstrap: [AppComponent]
 })
