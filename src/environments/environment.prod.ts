@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  leccion : false
+  leccion : false,
+  apiUrl : 'https://fakestoreapi.com/'
 };

@@ -1,14 +1,27 @@
 <div class="row text-center">
-    <h1>Tienda</h1>
+  <h1>Tienda</h1>
 </div>
 
 <div class="row">
-    <div class="col-md-3">
-        <h1>Filtro</h1>
+  <div class="col-md-3">
+    <h1>Filtro</h1>
+    <div class="row">
+      <div class="mb-3">
+        <label for="limitante" class="form-label">Limitante</label>
+        <input
+          type="text"
+          [(ngModel)]="limite"
+          name="limite"
+          (change)="buscarFiltrado()"
+          class="form-control"
+          id="limitante"
+        />
+      </div>
     </div>
-    <div class="col-md-9">
-        <div class="row" *ngFor="let producto of productos;let i = index">
-            <app-tarjeta [producto]="producto"></app-tarjeta>
-        </div>
+  </div>
+  <div class="col-md-9">
+    <div class="row" *ngFor="let producto of productos; let i = index">
+      <app-tarjeta [producto]="producto"></app-tarjeta>
     </div>
+  </div>
 </div>

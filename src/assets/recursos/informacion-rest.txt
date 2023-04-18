@@ -1,0 +1,88 @@
+// Peticiones http (Hypertext Transfer Protocolo)
+
+ /*
+    Es un protocolo para poder comunicarse entre cliente y el servidor.
+    
+    El puede hacer uso de formatos de transferencia como JSON, XML o GraphQL
+
+
+    Las peticiones HTTP tienen diferentes metodos que sirven para indicar la accion que va a realizar.
+    -Get: Sirve para solicitar informacion del servidor
+    -Post: Que envia datos al servidor para la creacion de un nuevo recurso
+    -Put: Actualiza recursos existentes con los datos que nosotros les indiquemos
+    -Delete : Elimina un  recurso
+    -(Adicional existen mas metodos que sirven para realizar otras funciones, pero estas son las mas populares ya que con estas realizamos operaciones CRUD (Create, Read, Update, Delete))
+
+    REST (Representational State Transfer) Es un estilo arquitectonico para diseñar aplicaciones en la red. 
+
+    -Utilizan metodos http para indicar las acciones a realizar sobre los recursos
+    -Exponen rutas bien estructuradas y consistentes para acceder a los recursos
+    -Retornan datos en formatos estandar como JSON o XML
+    -Son stateless, es decir, no almacenan información del estado entre peticiones. (?)
+
+    //https://uploads-ssl.webflow.com/623a17f293c65d02ed7b88bd/6252ab051e670d13f9599d59_REST-API-Image_c0dd9870585de555571305f8b182d4828de0c889.png (imagen referencia.)
+
+    //End points son aquellas rutas que nos permiten hacer uso de la api
+
+    JSON  (JavaScript Object Notation) es un formato de intercambio de datos ligero y facil de leer para humanos y para maquinas. Generalmente se usa para transmitir datos.
+
+    C,C++,C#, Java,JS, Python, Ruby y muchos otros
+
+    JSON tiene una estructura de clave-valor , las claves son los atributos  y siempre son cadenas de caracteres y los valores pueden ser cadenas, numeros, booleanos, objetos JSON o arrays de cualquiera de los anteriormente mencionado. 
+
+    Los JSON se delimitan con llaves ("{}") y  los pares claves-valor se separan con ","; por otro lado los arrays se delimitan con corchetes y sus elementos tambien se separan con ","
+
+    Ejemplo basico de estructura:
+    {
+        "clave": "valor",
+        "objeto" : {
+            "clave": 1,
+            "otraClave": true
+        },
+        "objetos":[
+            {
+                "id": 1,
+                "clave": "soyUnValor"
+            },
+            {
+                "id": 2,
+                "clave": "soyOtroValor"
+            },
+        ]
+    }
+
+    Ejemplo especifico en productos:
+
+[
+  {
+    id: 1,
+    titulo: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    precio: 109.95,
+    descripcion:
+      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    categoria: "men's clothing",
+    imagen: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    calificacion: { 
+        puntuacion: 3.9, 
+        conteo: 120 
+    },
+  },
+  {
+    id: 2,
+    titulo: "Mens Casual Premium Slim Fit T-Shirts ",
+    precio: 22.3,
+    descripcion:
+      "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    categoria: "men's clothing",
+    imagen:
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+    calificacion: { 
+        puntuacion: 4.1, 
+        conteo: 259 
+    },
+  },
+];
+
+
+
+ */

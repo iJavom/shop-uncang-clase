@@ -23,6 +23,9 @@ import { RuteoEjemploComponent } from './clase/routing/ruteo-ejemplo/ruteo-ejemp
 import { DataEjemploService } from './shared/service/data-ejemplo.service';
 import { TarjetaComponent } from './shopping/tienda/tarjeta/tarjeta.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModelsComponent } from './clase/models/models.component';
+import { ServicesComponent } from './clase/services/services.component';
+import { ProductosService } from './shared/service/productos.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     RoutingComponent,
     RuteoEjemploComponent,
+    ModelsComponent,
+    ServicesComponent,
 
 
   ],
@@ -58,7 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    DataEjemploService
+    DataEjemploService,
+    ProductosService
   ],
   bootstrap: [AppComponent]
 })
