@@ -8,6 +8,7 @@ import { TiendaComponent } from './shopping/tienda/tienda.component';
 import { NosotrosComponent } from './shopping/nosotros/nosotros.component';
 import { ContactanosComponent } from './shopping/contactanos/contactanos.component';
 import { RuteoEjemploComponent } from './clase/routing/ruteo-ejemplo/ruteo-ejemplo.component';
+import { ProductoComponent } from './shopping/producto/producto.component';
 
 const routes: Routes = [
   //1.- Rutas especificas: Hay rutas que pueden llevar parametros y estas son las primeras que deben ser declaradas
@@ -21,9 +22,10 @@ const routes: Routes = [
     path: 'shopping',
     component: ShoppingComponent,
     children: [
-      { path: 'tienda/:parametro', component: TiendaComponent},
+
       { path: 'inicio', component: InicioComponent },
       { path: 'tienda', component: TiendaComponent },
+      { path: 'producto', component: ProductoComponent},
       { path: 'nosotros', component: NosotrosComponent },
       { path: 'contactanos', component: ContactanosComponent },
     ],

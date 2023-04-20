@@ -17,13 +17,21 @@ export class ProductosService {
     private http: HttpClient
   ) { }
 
-  obtenerProductos(){ //getProducts
+  obtenerProductos(limitante?: string){ //getProducts ReadAll
     //console.log("Hola me ejecute");
-    return this.http.get<Producto[]>(`${this.apiUrl}products`);
+    let param ="";
+    if(limitante!=""){
+      param=`?limit=${limitante}`;
+    }
+    return this.http.get<Producto[]>(`${this.apiUrl}products${param}`);
   }
 
-  obtenerProductosFiltrado(limitante: string){ //getProducts
-    //console.log("Hola me ejecute");
-    return this.http.get<Producto[]>(`${this.apiUrl}products?limit=${limitante}`);
+  guardarProducto(producto:Producto){ //createProducts Create
+    return this.http.post<Producto>(`${this.apiUrl}products`,producto);
   }
+
+  // obtenerProductosFiltrado(limitante: string){ //getProducts
+  //   //console.log("Hola me ejecute");
+  //   return this.http.get<Producto[]>(`${this.apiUrl}products?limit=${limitante}`);
+  // }
 }

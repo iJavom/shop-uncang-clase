@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModelsComponent } from './clase/models/models.component';
 import { ServicesComponent } from './clase/services/services.component';
 import { ProductosService } from './shared/service/productos.service';
+import { ProductoComponent } from './shopping/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ProductosService } from './shared/service/productos.service';
     RuteoEjemploComponent,
     ModelsComponent,
     ServicesComponent,
+    ProductoComponent,
 
 
   ],

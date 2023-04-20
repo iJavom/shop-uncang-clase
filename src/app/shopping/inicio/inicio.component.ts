@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements OnInit {
+export class InicioComponent implements OnInit, OnDestroy {
 
-  constructor() { }
-
+  private subscription : any;
+  constructor() {}
+  //Volvemos a las 8:18 (20:18)
   ngOnInit(): void {
+    let i = 0;
+    this.subscription = setInterval(()=>{
+      i++;
+      console.log(`Soy una prueba del onDestroy ${i}`);
+    },1000);
   }
 
+  ngOnDestroy(){
+    //Ejemplo de ondestroy;
+    clearInterval(this.subscription);
+  }
 }

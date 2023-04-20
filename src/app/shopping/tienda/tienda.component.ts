@@ -15,22 +15,21 @@ export class TiendaComponent implements OnInit {
   limite:string ="";
 
   constructor(
-    private route: ActivatedRoute,
-    private dataEjemploService: DataEjemploService,
     private _productosService: ProductosService
   ) {}
 
   ngOnInit(): void {
     //this.productos = this.dataEjemploService.obtenerArticulos();
-    this._productosService.obtenerProductos().subscribe(
-      (data)=>{
-        this.productos = data;
-      },
-    );
+    // this._productosService.obtenerProductos().subscribe(
+    //   (data)=>{
+    //     this.productos = data;
+    //   },
+    // );
+    this.buscarFiltrado();
   }
 
   buscarFiltrado(){
-    this._productosService.obtenerProductosFiltrado(this.limite).subscribe(
+    this._productosService.obtenerProductos(this.limite).subscribe(
       (data)=>{
         this.productos = data;
       },
