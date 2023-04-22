@@ -4,26 +4,41 @@
 
 <div class="row">
   <div class="col-md-3">
-    <button class="btn btn-success w-100" [routerLink]="'/shopping/producto'">Añadir +</button>
-    <hr>
-    <h1>Filtro</h1>
-    <div class="row">
-      <div class="mb-3">
-        <label for="limitante" class="form-label">Limitante</label>
-        <input
-          type="text"
-          [(ngModel)]="limite"
-          name="limite"
-          (change)="buscarFiltrado()"
-          class="form-control"
-          id="limitante"
-        />
+    <button class="btn btn-success w-100 mb-3" [routerLink]="'/shopping/producto'">Añadir +</button>
+    <button class="btn  w-100 mb-3" (click)="mostrarFiltro = !mostrarFiltro" [ngClass]="{'btn-info': !mostrarFiltro , 'btn-outline-info':mostrarFiltro}">
+      {{mostrarFiltro? 'Ocultar Filtros' : 'Activar Filtros'}}
+    </button>
+    <ng-container *ngIf="mostrarFiltro">
+      <hr>
+      <h1>Filtros</h1>
+      <div class="row mb-3">
+  
+          <label for="limitante" class="form-label">Tamaño:</label>
+          <input
+            type="text"
+            [(ngModel)]="limite"
+            name="limite"
+            class="form-control"
+            id="limitante"
+          />
+  
       </div>
-    </div>
+      <div class="row mb-3">
+        <label for="categorias">Categorias:</label>
+        <select [(ngModel)]="filtroCategoria" id="categorias" class="form-select">
+          <option selected [value]="''">- Seleciones Una Categoria -</option>
+          <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+        </select>
+      </div>
+      <div class="row mb-3">
+        <button class="btn btn-info" (click)="buscarFiltrado()">Filtrar</button>
+      </div>
+    </ng-container>
+
   </div>
   <div class="col-md-9">
     <div class="row" *ngFor="let producto of productos; let i = index">
-      <app-tarjeta [producto]="producto"></app-tarjeta>
+      <app-tarjeta [producto]="producto" (refrescar)="buscarFiltrado()"></app-tarjeta>
     </div>
   </div>
 </div>

@@ -12,7 +12,11 @@
         <p class="card-text">
           <small class="text-body-secondary">${{ producto.price }}</small>
         </p>
-        <a href="#" class="btn btn-primary">🛒</a>
+        <div class="row">
+            <a class="btn btn-primary mb-3">🛒</a>
+            <a class="btn btn-light mb-3"  [routerLink]="'/shopping/producto/'+producto.id">Editar</a>
+            <a class="btn btn-danger mb-3" (click)="eliminarProducto(producto.id)">Eliminar</a>
+        </div> 
       </div>
     </div>
   </div>

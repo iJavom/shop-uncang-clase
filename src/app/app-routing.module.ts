@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'shopping',
     component: ShoppingComponent,
     children: [
-
+      { path: 'producto/:id', component: ProductoComponent},
       { path: 'inicio', component: InicioComponent },
       { path: 'tienda', component: TiendaComponent },
       { path: 'producto', component: ProductoComponent},

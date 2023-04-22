@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/app/shared/model/producto.model';
+import { CategoriasService } from 'src/app/shared/service/categoria.service';
 import { ProductosService } from 'src/app/shared/service/productos.service';
 
 @Component({
@@ -11,21 +12,56 @@ import { ProductosService } from 'src/app/shared/service/productos.service';
 export class ProductoComponent implements OnInit {
 
   producto : Producto = new Producto();
+  categorias : string[] =[];
+
   constructor(
     private _productosService : ProductosService,
-    private router : Router
+    private router : Router,
+    private activatedRoute : ActivatedRoute,
+    private _categoriaService : CategoriasService
   ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((params)=>{
+      if(params.get('id')){
+        this.obtenerProducto(+params.get('id')!);
+      }
+    });
+    this.cargarCategorias();
   }
 
-  guardarProducto(){
-    this._productosService.guardarProducto(this.producto).subscribe(
-      (jaimito)=>{
-        console.log(jaimito);
-        this.router.navigateByUrl('/shopping/tienda');
+  obtenerProducto(id: number){
+    this._productosService.obtenerProducto(id).subscribe(
+      (res)=>{
+        this.producto = res;
+    });
+  }
+
+  cargarCategorias(){
+    this._categoriaService.obtenerCategorias().subscribe(
+      (res)=>{
+        this.categorias = res;
       }
     );
+  }
+  
+  guardarProducto(){
+    if(this.producto.id == 0){
+      this._productosService.guardarProducto(this.producto).subscribe(
+        (res)=>{
+          console.log(res);
+          this.router.navigateByUrl('/shopping/tienda');
+        }
+      );
+    }else{
+      this._productosService.actualizarProducto(this.producto).subscribe(
+        (res)=>{
+          console.log(res);
+          this.router.navigateByUrl('/shopping/tienda');
+        }
+      );
+    }
+
   }
 
 }

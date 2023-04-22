@@ -27,6 +27,7 @@ import { ModelsComponent } from './clase/models/models.component';
 import { ServicesComponent } from './clase/services/services.component';
 import { ProductosService } from './shared/service/productos.service';
 import { ProductoComponent } from './shopping/producto/producto.component';
+import { CategoriasService } from './shared/service/categoria.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ProductoComponent } from './shopping/producto/producto.component';
   ],
   providers: [
     DataEjemploService,
-    ProductosService
+    ProductosService,
+    CategoriasService
   ],
   bootstrap: [AppComponent]
 })

@@ -28,6 +28,13 @@
     />
   </div>
   <div class="mb-3">
+    <label for="categorias">Categorias:</label>
+    <select [(ngModel)]="producto.category" id="categorias" class="form-select">
+      <option selected [value]="''">- Seleciones Una Categoria -</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
     <label for="description" class="form-label"
       >Descripción</label
     >
