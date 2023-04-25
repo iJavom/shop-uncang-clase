@@ -51,6 +51,9 @@ export class ProductoComponent implements OnInit {
         (res)=>{
           console.log(res);
           this.router.navigateByUrl('/shopping/tienda');
+        },
+        (error)=>{ //con un segundo arrowfunction podemos controlar en caso de que la peticion falle
+          alert(error.message);
         }
       );
     }else{
@@ -58,7 +61,10 @@ export class ProductoComponent implements OnInit {
         (res)=>{
           console.log(res);
           this.router.navigateByUrl('/shopping/tienda');
-        }
+        },
+      (error)=>{
+        alert(error.message);
+      }
       );
     }
 

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment'
 import { Producto } from '../model/producto.model';
@@ -32,7 +32,14 @@ export class ProductosService {
   }
 
   obtenerProducto(id:number){ //getProduct Read
-    return this.http.get<Producto>(`${this.apiUrl}products/${id}`);
+    //return this.http.get<Producto>(`${this.apiUrl}products/${id}`); //version sin encabezado
+    //Ejemplo para añadir un encabezado / headers
+    const header = new HttpHeaders().set('Authorization', 'Bearer --aqui iria un token--')
+    const options = {
+      headers: header
+    }
+
+    return this.http.get<Producto>(`${this.apiUrl}products/${id}`, options);
   }
 
   guardarProducto(producto:Producto){ //createProducts Create
@@ -40,7 +47,7 @@ export class ProductosService {
   }
 
   actualizarProducto(producto: Producto){
-    return this.http.put<Producto>(`${this.apiUrl}products/${producto.id}`,producto);
+    return this.http.put<Producto>(`${this.apiUrl}productsss/${producto.id}`,producto);
   }
 
   eliminarProducto(id:number){
