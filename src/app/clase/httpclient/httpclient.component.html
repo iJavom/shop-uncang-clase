@@ -1,0 +1,35 @@
+<div class="row">
+    <h3>HttpClient</h3>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>
+    
+            El http client es un modulo perteneciente a la libreria de angular/common/http y es la encargada de generar nuestras peticiones HTTP segun el metodo especificado... y es importante en module importar HttpClientModule
+        </p>
+        <br>
+        <p>
+            Los metodos pueden ser:
+        </p>
+        <br>
+            <ul>
+                <li><strong>GET:</strong>  Sirve para hacer solicitudes de obtencion de datos. Este solo lleve un parametro que es la URL y puede tener Query Params ()</li>
+                <li><strong>POST:</strong> Sirve para hacer inserciones o crear datos de un elemento generalmente este modelo va en un formato especificado (JSON/XML/text) y se integra al body de la peticion. Lleva dos parametros donde uno es la URL (que puede llevar queryparam) y el otro es el body que va como un 2do parametro  </li>
+                <li><strong>PUT:</strong> Sirve para hacer actualizaciones de nuestros datos y generalmente lleva un body que va en formato (JSON/XML/Text). Recibe dos parametros donde uno es la URL (que puede llevar queryparam) y el otro es el body</li>
+                <li><strong>DELETE:</strong> que sirve para eliminar elementos especificados mediante el unico parametro que envia (puede ser un queryparam).  </li>
+                <li><strong>Otros:</strong> para efectos se pueden apoyar tanto de la documetancion del backend como la de angular</li>
+            </ul>
+            <p><strong>NOTA:</strong> La indicacion anteriormente dada depende exclusivamente de la api/webservice a las que nos queremos comunicar. Ya que el metodo es como una puerta al desarrollo realizado por un tercero</p>
+            <br>
+            <h4>Headers:</h4>
+            <br>
+            <p>Son una clase que forma parte de @angular/common/http y nos sirven para modificar los atributos del encabezado del envio de la peticion, recordando que cada http request es como un paquete al que le podemos incluir notas (que es el encabezado). </p>
+
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo: </h4>
+        <p>Para ver ejemplo se puede ir a la carpeta <strong>shared/services/productos.service.ts</strong> </p>
+
+        
+    </div>
+</div>

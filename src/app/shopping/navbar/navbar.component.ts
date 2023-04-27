@@ -22,7 +22,7 @@ export class NavbarComponent {
     }
 
   cambiarMenu(link:string){
-    debugger;
+    //debugger;
     this.router.navigateByUrl(`shopping/${link}`);
   }
   // Volvemos a las 8:11
@@ -32,7 +32,7 @@ export class NavbarComponent {
 
   // Es circunstancial
   // esRutaActiva(ruta: string){
-  //   debugger;
+  //   //debugger;
   //   const esActiva = this.activatedRoute.root.children[0].firstChild;
   //   return esActiva && esActiva.routeConfig && esActiva.routeConfig.path === ruta;
   // }

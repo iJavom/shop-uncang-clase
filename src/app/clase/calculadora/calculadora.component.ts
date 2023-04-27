@@ -33,7 +33,7 @@ export class CalculadoraComponent {
   }
 
   realizarOperacion(caracter:string){
-    debugger;
+    //debugger;
     if(this.valorUno==0 && (caracter == '+' || caracter == '-' || caracter == '*' || caracter == '/') ){
       this.valorUno = parseFloat(this.caracteresApretados);
       this.operacion = caracter;

@@ -18,7 +18,7 @@ export class ComunicacionComponentesComponent implements OnInit {
   }
 
   imprimirAlerta(unString:any){
-    debugger;
+    //debugger;
     alert(unString);
   }
 

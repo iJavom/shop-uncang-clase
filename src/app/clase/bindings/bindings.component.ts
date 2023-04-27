@@ -31,7 +31,7 @@ export class BindingsComponent implements OnInit {
   }
 
   metodoEjemploEvent(event:Event){
-    debugger;
+    //debugger;
     console.log(event);
   }
 
