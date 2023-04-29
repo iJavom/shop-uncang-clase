@@ -16,6 +16,10 @@ import { ServicesComponent } from './services/services.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClaseRoutingModule } from './clase-routing.module';
 import { ModulosComponent } from './modulos/modulos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataEjemploService } from '../shared/service/data-ejemplo.service';
+import { SharedModule } from '../shared/shared.module';
+import { PipeComponent } from './pipe/pipe.component';
 
 
 
@@ -35,12 +39,18 @@ import { ModulosComponent } from './modulos/modulos.component';
     HttpclientComponent,
     ReactFormComponent,
     ModulosComponent,
+    PipeComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ClaseRoutingModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
+  providers:[
+    DataEjemploService
   ]
 })
 export class ClaseModule { }

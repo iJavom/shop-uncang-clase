@@ -1,0 +1,65 @@
+<div class="row">
+    <h4>Pipes</h4>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>
+            Los pipes son un caracteristica de angular que permite transformar y dar formato a los datos que estamos gestionando en la aplicacion. Los cambios se realizan en tiempo real y se dan gracias a los ciclos de vidas en su proceso de renderizacion.
+            <br>
+            <br>
+            la sintaxis de los pipes es la siguiente:
+            abrimos nuestros interpolacion con las 
+            &#123; &lcub; variable | pipe &#125; &rcub; 
+            donde nosotros podremos modificar la visibilidad
+            <br>
+            Existen diversos tipos de pipes y lo podemos clasificar basicamente en 2... nativos de angular y personalizados
+        </p>   
+    </div>
+</div>
+<div class="row">
+    <h4>Pipes nativos de angular</h4>
+</div>
+<div class="row">
+    <h5>Currency Pipe</h5>
+
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>
+            El currency pipe sirve para transformar nuestros datos numericos en formatos de moneda
+            <br>
+            el pipe tiene un nombre de currency y le podemos añadir atributos...
+
+            ejemplo personalizado: currency:'EUR'
+        </p>
+
+    </div>
+
+    <div class="col-md-3">
+        <h4>Ejemplo:</h4>
+
+        <p>Este es sin pipe: {{precioEmpanada}}</p>
+
+        <p>Con pipe: {{precioEmpanada|currency}}</p>
+
+        <p>{{ precioEmpanada | currency:'COP':'$':'1.2-16'}}</p>
+    </div>
+</div>
+<div class="row">
+    <h5>Decimal Pipe</h5>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>
+            El decimal pipe sirve para dar formato a los numericos (y en caso de haber decimales redondear)
+            <br>
+            la sintaxis es : number : digitos : locale
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h5>Ejemplo:</h5>
+        <p>Sin pipe : {{numeroPi}}</p>
+        <p>Con pipe : {{numeroPi|number}}</p>
+        <p>{{ numeroPi | number:'1.2-2'}}</p>
+    </div>
+</div>

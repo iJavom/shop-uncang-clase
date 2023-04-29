@@ -11,6 +11,7 @@ import { TarjetaComponent } from './tienda/tarjeta/tarjeta.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingRoutingModule } from './shopping-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -30,7 +31,8 @@ import { ShoppingRoutingModule } from './shopping-routing.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ShoppingRoutingModule
+    ShoppingRoutingModule,
+    SharedModule
   ]
 })
 export class ShoppingModule { }

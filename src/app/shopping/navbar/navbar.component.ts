@@ -14,6 +14,8 @@ export class NavbarComponent {
     {id:3,nombre:"Nosotros",link:"nosotros",disabled:false},
     {id:4,nombre:"Contactanos",link:"contactanos",disabled:false}
   ];
+  nombreUsuario = "JAVIER VARGAS"
+  hoy:Date = new Date();
   constructor(
     private router : Router,
     private activatedRoute : ActivatedRoute

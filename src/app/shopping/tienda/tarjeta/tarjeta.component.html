@@ -10,7 +10,7 @@
         <h5 class="card-title">{{ producto.title }}</h5>
         <p class="card-text">{{ producto.description }}</p>
         <p class="card-text">
-          <small class="text-body-secondary">${{ producto.price }}</small>
+          <small class="text-body-secondary">{{ producto.price | currency:'USD':true:'0.2-2'}}</small>
         </p>
         <div class="row">
             <a class="btn btn-primary mb-3">🛒</a>
