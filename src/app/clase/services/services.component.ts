@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataEjemploService } from 'src/app/shared/service/data-ejemplo.service';
 
 @Component({
   selector: 'app-services',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private nuestroService: DataEjemploService) { }
 
   ngOnInit(): void {
+    this.nuestroService.obtenerArticulos().subscribe(
+      (data)=>{
+      console.log(data);
+      }
+    );
   }
 
 }

@@ -13,7 +13,7 @@ import { ReactFormComponent } from './react-form/react-form.component';
 import { RoutingComponent } from './routing/routing.component';
 import { RuteoEjemploComponent } from './routing/ruteo-ejemplo/ruteo-ejemplo.component';
 import { ServicesComponent } from './services/services.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClaseRoutingModule } from './clase-routing.module';
 import { ModulosComponent } from './modulos/modulos.component';
 
@@ -39,7 +39,8 @@ import { ModulosComponent } from './modulos/modulos.component';
   imports: [
     CommonModule,
     FormsModule,
-    ClaseRoutingModule
+    ClaseRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ClaseModule { }
