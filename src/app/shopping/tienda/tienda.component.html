@@ -13,6 +13,18 @@
       <h1>Filtros</h1>
       <div class="row mb-3">
   
+        <label for="filtro" class="form-label">Filtro:</label>
+        <input
+          type="text"
+          [(ngModel)]="filtro"
+          name="filtro"
+          class="form-control"
+          id="filtro"
+        />
+
+      </div>
+      <div class="row mb-3">
+  
           <label for="limitante" class="form-label">Tamaño:</label>
           <input
             type="text"
@@ -37,7 +49,7 @@
 
   </div>
   <div class="col-md-9">
-    <div class="row" *ngFor="let producto of productos; let i = index">
+    <div class="row" *ngFor="let producto of productos; let i = index ">
       <app-tarjeta [producto]="producto" (refrescar)="buscarFiltrado()"></app-tarjeta>
     </div>
   </div>

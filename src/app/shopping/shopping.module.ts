@@ -12,6 +12,7 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingRoutingModule } from './shopping-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { FiltroPipe } from '../shared/pipe/filtro.pipe';
 
 
 
@@ -25,7 +26,7 @@ import { SharedModule } from '../shared/shared.module';
         TarjetaComponent,
         ContactanosComponent,
         NotFoundComponent,
-        ProductoComponent,
+        ProductoComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +34,9 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     ShoppingRoutingModule,
     SharedModule
+  ],
+  providers:[
+   
   ]
 })
 export class ShoppingModule { }

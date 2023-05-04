@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataEjemploService } from '../shared/service/data-ejemplo.service';
 import { SharedModule } from '../shared/shared.module';
 import { PipeComponent } from './pipe/pipe.component';
+import { PrefijoPipe } from '../shared/pipe/prefijo.pipe';
+import { FiltroPipe } from '../shared/pipe/filtro.pipe';
 
 
 
@@ -40,6 +42,8 @@ import { PipeComponent } from './pipe/pipe.component';
     ReactFormComponent,
     ModulosComponent,
     PipeComponent,
+    PrefijoPipe,
+    FiltroPipe
   ],
   imports: [
     CommonModule,
@@ -50,7 +54,10 @@ import { PipeComponent } from './pipe/pipe.component';
     SharedModule,
   ],
   providers:[
-    DataEjemploService
+    DataEjemploService,
+    PrefijoPipe,
+    FiltroPipe
+
   ]
 })
 export class ClaseModule { }

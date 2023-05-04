@@ -20,7 +20,13 @@ export class NavbarComponent {
     private router : Router,
     private activatedRoute : ActivatedRoute
     ) { 
-      
+      //Ejemplo de como actualizar la hora 
+      // setInterval(
+      //   ()=>{
+      //     this.hoy = new Date();
+      //     console.log('Hola');
+      //   }
+      // ,1000);
     }
 
   cambiarMenu(link:string){

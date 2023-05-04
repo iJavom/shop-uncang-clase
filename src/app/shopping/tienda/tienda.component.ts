@@ -17,6 +17,7 @@ export class TiendaComponent implements OnInit {
   categorias: string[] = [];
   filtroCategoria : string = "";
   mostrarFiltro : boolean = false;
+  filtro:string="";
   constructor(
     private _productosService: ProductosService,
     private _categoriaService: CategoriasService
