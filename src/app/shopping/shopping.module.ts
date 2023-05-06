@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingRoutingModule } from './shopping-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FiltroPipe } from '../shared/pipe/filtro.pipe';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -33,7 +34,8 @@ import { FiltroPipe } from '../shared/pipe/filtro.pipe';
     FormsModule,
     ReactiveFormsModule,
     ShoppingRoutingModule,
-    SharedModule
+    SharedModule,
+    NgSelectModule,
   ],
   providers:[
    

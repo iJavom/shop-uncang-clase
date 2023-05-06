@@ -22,6 +22,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PipeComponent } from './pipe/pipe.component';
 import { PrefijoPipe } from '../shared/pipe/prefijo.pipe';
 import { FiltroPipe } from '../shared/pipe/filtro.pipe';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -52,6 +53,7 @@ import { FiltroPipe } from '../shared/pipe/filtro.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
+    NgSelectModule,
   ],
   providers:[
     DataEjemploService,

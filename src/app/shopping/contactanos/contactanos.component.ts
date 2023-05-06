@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Contactanos } from 'src/app/shared/model/contactanos.model';
+import { Map, marker, popup, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'app-contactanos',
@@ -24,14 +25,16 @@ export class ContactanosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.myForm.get('email'));
-    //Forma 1 con FormGroup
-    // this.myForm = new FormGroup({
-    //   nombre: new FormControl('Inicie con este valor'),
-    //   email: new FormControl(''),
-    //   telefono: new FormControl(''),
-    //   motivo : new FormControl('Con este valor inicio')
-    // })
+    var map = new Map('map').setView([7.11358, -73.11424], 19);
+    tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    marker([7.11320, -73.11426]).addTo(map)
+    popup()
+    .setLatLng([7.11320, -73.11426])
+    .setContent("Av. Gonzalez Valencia Clz #52-69 piso 1, Sotomayor, Bucaramanga, Santander")
+    .openOn(map);
   }
   
   enviar(){
@@ -46,6 +49,12 @@ export class ContactanosComponent implements OnInit {
       console.log('Formulario invalido');
     }
   }
+
+  // Fallaron las pruebas :(
+  // onMapClick(e:any) {
+  //   debugger;
+  //   alert("You clicked the map at " + e.altitudeAngle.toString());
+  // }
 
   nombre(){
     return this.myForm.value.nombre;

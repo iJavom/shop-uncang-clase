@@ -10,6 +10,15 @@ export class ClaseComponent {
    //Variables (1)
    public title : string  = 'Hola mundo'; //Explicito public/private(No puede usarse en html) 
    nombre = 'Jaimito'; //Implicito
+   
+   selectedCar!: number;
+
+   cars = [
+       { id: 1, name: 'Volvo' },
+       { id: 2, name: 'Saab' },
+       { id: 3, name: 'Opel' },
+       { id: 4, name: 'Audi' },
+   ];
 
    //Constructor (3)
    constructor(){

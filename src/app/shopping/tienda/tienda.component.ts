@@ -15,7 +15,7 @@ export class TiendaComponent implements OnInit {
   productos: Producto[] = [];
   limite:string ="";
   categorias: string[] = [];
-  filtroCategoria : string = "";
+  filtroCategoria : string | null = null;
   mostrarFiltro : boolean = false;
   filtro:string="";
   constructor(
@@ -37,7 +37,7 @@ export class TiendaComponent implements OnInit {
   }
 
   buscarFiltrado(){
-    this._productosService.obtenerProductos(this.limite,this.filtroCategoria).subscribe(
+    this._productosService.obtenerProductos(this.limite,this.filtroCategoria??"").subscribe(
       (data)=>{
         this.productos = data;
       },
