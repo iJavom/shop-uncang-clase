@@ -23,6 +23,8 @@ import { PipeComponent } from './pipe/pipe.component';
 import { PrefijoPipe } from '../shared/pipe/prefijo.pipe';
 import { FiltroPipe } from '../shared/pipe/filtro.pipe';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { DependenciasComponent } from './dependencias/dependencias.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -44,7 +46,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ModulosComponent,
     PipeComponent,
     PrefijoPipe,
-    FiltroPipe
+    FiltroPipe,
+    DependenciasComponent
   ],
   imports: [
     CommonModule,
@@ -54,11 +57,13 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ReactiveFormsModule,
     SharedModule,
     NgSelectModule,
+    NgChartsModule
   ],
   providers:[
     DataEjemploService,
     PrefijoPipe,
-    FiltroPipe
+    FiltroPipe,
+    
 
   ]
 })
