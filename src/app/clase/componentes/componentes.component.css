@@ -1,0 +1,10 @@
+#ejemplo-animations{
+    background-color:red;
+    transition: 5s ease-in;
+}
+
+#ejemplo-animations:hover{
+    background-color: blue;
+    transition: 1s ease-in;
+    transform: rotate(90deg);
+}

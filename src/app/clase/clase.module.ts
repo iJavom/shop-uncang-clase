@@ -25,7 +25,9 @@ import { FiltroPipe } from '../shared/pipe/filtro.pipe';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DependenciasComponent } from './dependencias/dependencias.component';
 import { NgChartsModule } from 'ng2-charts';
-
+import { AnimacionesComponent } from './animaciones/animaciones.component';
+import { ComponenteunoComponent } from './animaciones/componenteuno/componenteuno.component';
+import { ComponentedosComponent } from './animaciones/componentedos/componentedos.component';
 
 
 @NgModule({
@@ -47,7 +49,10 @@ import { NgChartsModule } from 'ng2-charts';
     PipeComponent,
     PrefijoPipe,
     FiltroPipe,
-    DependenciasComponent
+    DependenciasComponent,
+    AnimacionesComponent,
+    ComponenteunoComponent,
+    ComponentedosComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,67 @@
+<div class="row">
+    <h4>Animaciones</h4>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <p>
+            Las animaciones en agular se dan gracias a la libreria @angular/platform-browser/animations y nos va a permitir llevar un mejor control de nuestras animaciones que son los efectos visuales que vamos a tener el html.
+            <br>
+            Los elementos de la animacion son los siguientes
+            <br>
+        </p> 
+        <ul>
+            <li>trigger: Es el nombre de la animacion y donde definimos todo el comportamiento recibe como primer parametro el nombre y despues recibe un array</li>
+            <li>state : El posible comportamiento que asimila en un punto o como lo dice su traduccion el posible "estado" que puede asumir, recibe como primer parametro el nombre del estado y despues un metodo style que recibe un objeto similar al css </li>
+            <li>
+                transition: Sirve para indicar la transicion que habra entre dos estados 
+            </li>
+            <li>
+                query: Se utiliza cuando se tenga que animar varios elementos
+            </li>
+            <li> animate: Define la duracion y la aceleracion</li>
+        </ul>  
+    </div>
+    <div class="col-md-3">
+        <h4>Ejemplo van a ir mas abajo:</h4>
+    </div>
+</div>
+<div class="row">
+    <h4>Ejemplo basico:</h4>
+    <div class="cuadro" [@cambioBasico]="estado"></div>
+</div>
+<div class="row">
+    <h5>Animaciones entre cambio de estados</h5>
+</div>
+
+<div class="row">
+    <div class="col-md-1">
+        <button class="btn btn-primary" (click)="cambiarEstado('base')">Base</button>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-primary" (click)="cambiarEstado('rotado')">Rotar</button>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-primary" (click)="cambiarEstado('estirado')">Estirar</button>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-primary" (click)="cambiarEstado('ensanchado')">Ensanchar</button>
+    </div>
+</div>
+<div class="row">
+    <div class="cuadro" [@cambioEstado]="estadoCambio"></div>
+</div>
+
+<div class="row">
+    <h5>Animaciones entre componentes</h5>
+</div>
+<div class="row text-center mb-5" style="min-height: 20em;">
+    <div class="col-md-12">
+        <button class="btn btn-primary" (click)="mostrar = !mostrar">Ocultar</button>
+    </div>
+    <div class="col-md-12">
+        <app-componenteuno *ngIf="mostrar" @fadeInOut></app-componenteuno>
+
+    </div>
+
+</div>
+
