@@ -8,3 +8,8 @@
     transition: 1s ease-in;
     transform: rotate(90deg);
 }
+
+.class-ejemplo{
+    background-color: green !important;
+    transition: 1s ease-in;
+}

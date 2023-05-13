@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, animate  } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes, query, group, sequence, stagger, animateChild  } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -22,16 +22,100 @@ import { Component, OnInit } from '@angular/core';
       transition('* <=> *',animate('750ms ease-in-out'))
     ]
     ),
-    //Ejemplo Animaciones de entrada y salida de componentes
+    //Ejemplo cambio parametros:
+    trigger('cambioPorParametros',[
+      state('estado1, estado2',
+            style({
+              width: '{{ancho}}px',
+              height: '{{alto}}px'
+            }),
+            {
+              params:{
+                ancho: 300,
+                alto: 300
+              }
+            }
+      ),
+      transition('* <=> *', animate('750ms ease-in'))
+    ]),
+    //Ejemplo Animaciones de entrada y salida de componentes (gracias al :enter que indica cuando se renderiza y el leave que es cuando se elimina)
     trigger('fadeInOut',[
       transition(':enter',[
-        style({opacity: 0, transform: 'translateX(45px)'}),
+        style({opacity: 0, transform: 'translateX(450px)'}),
         animate('750ms',style({opacity: 1, transform: 'translateX(0)'})),
       ]),
       transition(':leave',[
-        animate('750ms',style({opacity: 0 , transform: 'translateX(45px)'})),
+        animate('750ms',style({opacity: 0 , transform: 'translateX(450px)'})),
       ]),
+    ]),
+    //Animaciones con multiples fases (keyframes ejemplo)
+    trigger('fadeInOutKey',[
+      transition(':enter',[
+        style({opacity:0, transform: 'translateY(-500px)'}),
+        animate('750ms ease-out', keyframes([
+          style({opacity: 1, transform: 'translateY(220px)'}),
+          style({transform: 'translateY(-10px)'}),
+          style({transform: 'translateY(0px)'}),
+        ]))
+      ]), //ahora agregamos el leave aca
+      transition(':leave',[
+        style({opacity: 1 , transform: 'translateY(0px)'}),
+        animate('750ms ease-in', keyframes([
+          style({transform: 'translateY(-30px)', offset: 0.6}),
+          style({ opacity: 0, transform: 'translateY(500px)', offset:1})
+        ]))
+      ])
+    ]),
+
+    //animaciones agrupadas
+    //gracias al query podemos capturar multiples elementos como si fueran css
+    trigger('fadeInGroup',[
+      transition('* <=> *',[
+        query('app-componenteuno',[
+          style({ opacity:0 , transform: 'scale(0.8)' }),
+          group([
+            animate('1250ms',style({ opacity: 1 })),
+            animate('750ms ease-in', style({transform: 'scale(1)'}))
+          ])
+        ])
+      ])
+    ]),
+
+    //animaciones secuenciales 
+    trigger('fadeInSequence',[
+      transition('* <=> *',[
+        query('.animacion',[
+          style({ opacity:0 , transform: 'scale(0)' }),
+          sequence([
+            animate('1000ms',style({opacity:1 , transform: 'scale(0, .01)'})),
+            animate('600ms'), style({ transform: 'scale(1, .01)'}),
+            animate('600ms'), style({ transform: 'scale(1, 1)'} )
+          ])
+        ])
+      ])
+    ]),
+
+    //animacion de padre a hijos (animacion de hijos)
+    trigger('slideInRightList',
+      [
+        transition(':enter, :leave', [
+          query('@*',animateChild(),{optional:true})
+        ])
+      ]
+    ),
+    trigger('slideInRight',[
+      transition(':enter',[
+        style({transform: 'translateX(100%)', opacity:0 }),
+        animate('500ms ease-in'), style({opacity: 1, transform: 'translate(0%)'})
+      ]),
+      transition(':leave',[
+        style({ transform: 'translate(0%)', opacity: 1}),
+        animate('500ms ease-in'), style({opacity: 0, transform: 'translate(100%)'})
+      ])
     ])
+
+
+
   ]
 })
 export class AnimacionesComponent implements OnInit {
@@ -40,6 +124,21 @@ export class AnimacionesComponent implements OnInit {
   public estadoCambio : string = 'base';
   public anchura : number = 600;
   public mostrar = true;
+
+  public mostrarKeyEjemplo = true;
+
+  public mostrarGrupoEjemplo = true;
+  public mostrarSeqEjemplo = true;
+
+  public mostrarMultipleEjemplo = true;
+
+  public varEstadoParam = {
+    value:'estado1',
+    params:{
+      ancho: 300,
+      alto: 300
+    }
+  }
 
   constructor() { }
 
@@ -53,5 +152,23 @@ export class AnimacionesComponent implements OnInit {
     this.estadoCambio = param;
     this.anchura= Math.floor(Math.random() * (600 - 300) + 300);
   }
+
+  cambiarTamano(){
+    
+    this.varEstadoParam = {
+      value: this.varEstadoParam.value === 'estado1' ? 'estado2':'estado1',
+      params:{
+        ancho : Math.floor(Math.random() * (600 - 300) + 300),
+        alto: Math.floor(Math.random() * (600 - 300) + 300)
+      }
+    }
+    // Este fallo...
+    // this.varEstadoParam.value = this.varEstadoParam.value === 'estado1' ? 'estado2':'estado1';
+    // this.varEstadoParam.params.alto =  Math.floor(Math.random() * (600 - 300) + 300);
+    // this.varEstadoParam.params.ancho =  Math.floor(Math.random() * (600 - 300) + 300);
+  }
+
+
+  //Volvemos a las 8:17 - 20:17
 
 }

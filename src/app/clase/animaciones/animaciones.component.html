@@ -50,18 +50,80 @@
 <div class="row">
     <div class="cuadro" [@cambioEstado]="estadoCambio"></div>
 </div>
+<div class="row">
+    <h5>Animacion con parametros</h5>
+</div>
 
 <div class="row">
-    <h5>Animaciones entre componentes</h5>
+    <button class="btn btn-primary" (click)="cambiarTamano()"> Cambiar tamaño</button>
+</div>
+<div class="row">
+    <div class="cuadro" [@cambioPorParametros]="varEstadoParam"></div>
+</div>
+
+<div class="row">
+    <h5>Animaciones de entrada y salida componentes</h5>
 </div>
 <div class="row text-center mb-5" style="min-height: 20em;">
     <div class="col-md-12">
-        <button class="btn btn-primary" (click)="mostrar = !mostrar">Ocultar</button>
+        <button class="btn btn-primary" (click)="mostrar = !mostrar">Interactuar</button>
     </div>
-    <div class="col-md-12">
-        <app-componenteuno *ngIf="mostrar" @fadeInOut></app-componenteuno>
-
+    <div class="col-md-12 ambiente-animacion">
+        <app-componenteuno *ngIf="mostrar" @fadeInOut style="position: absolute;"></app-componenteuno>
     </div>
-
 </div>
 
+<div class="row">
+    <h5>Animaciones de entrada y salida con keyframes</h5>
+</div>
+<div class="row text-center mb-5">
+    <div class="col-md-12">
+        <button class="btn btn-primary" (click)="mostrarKeyEjemplo = !mostrarKeyEjemplo">Interactuar</button>
+    </div>
+    <div class="col-md-12 ambiente-animacion">
+            <app-componenteuno *ngIf="mostrarKeyEjemplo" @fadeInOutKey style="position: absolute;"></app-componenteuno>
+    </div>
+</div>
+
+
+<div class="row">
+    <h5>Animaciones agrupada</h5>
+</div>
+<div class="row text-center mb-5">
+    <div class="col-md-12">
+        <button class="btn btn-primary" (click)="mostrarGrupoEjemplo= !mostrarGrupoEjemplo">Interactuar</button>
+    </div>
+    <div class="col-md-12 ambiente-animacion" [@fadeInGroup]="mostrarGrupoEjemplo">
+            <app-componenteuno style="position: absolute;"></app-componenteuno>
+    </div>
+</div>
+
+<div class="row">
+    <h5>Animaciones secuencia</h5>
+</div>
+<div class="row text-center mb-5">
+    <div class="col-md-12">
+        <button class="btn btn-primary" (click)="mostrarSeqEjemplo= !mostrarSeqEjemplo">Interactuar</button>
+    </div>
+    <div class="col-md-12 ambiente-animacion" [@fadeInSequence]="mostrarSeqEjemplo">
+            <app-componenteuno class="animacion" style="position: absolute;"></app-componenteuno>
+            <div class="cuadro animacion"></div>
+    </div>
+</div>
+
+
+<div class="row">
+    <h5>Animaciones de padre a hijos</h5>
+
+</div>
+<div class="row text-center mb-5">
+    <div class="col-md-12">
+        <button class="btn btn-primary" (click)="mostrarMultipleEjemplo= !mostrarMultipleEjemplo">Interactuar</button>
+    </div>
+    <div class="col-md-12 ambiente-animacion" @slideInRightList *ngIf="mostrarMultipleEjemplo">
+            <app-componenteuno @slideInRight class="animacion" style="position: absolute;"></app-componenteuno>
+            <div @fadeInOutKey class="cuadro animacion"></div>
+    </div>
+</div>
+
+    <!-- Stagger fallo explicacion pendiente -->
