@@ -1,5 +1,7 @@
 import { trigger, state, style, transition, animate, keyframes, query, group, sequence, stagger, animateChild  } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { slideInAnimation } from 'src/app/shared/animations/animations';
 
 @Component({
   selector: 'app-animaciones',
@@ -112,7 +114,10 @@ import { Component, OnInit } from '@angular/core';
         style({ transform: 'translate(0%)', opacity: 1}),
         animate('500ms ease-in'), style({opacity: 0, transform: 'translate(100%)'})
       ])
-    ])
+    ]),
+
+    //Animaciones entre componentes
+    slideInAnimation
 
 
 
@@ -168,7 +173,9 @@ export class AnimacionesComponent implements OnInit {
     // this.varEstadoParam.params.ancho =  Math.floor(Math.random() * (600 - 300) + 300);
   }
 
-
-  //Volvemos a las 8:17 - 20:17
+  prepareRoute(outlet: RouterOutlet){
+    console.log(outlet.activatedRouteData['animation']);
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
 
 }

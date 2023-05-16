@@ -15,13 +15,13 @@ const routes : Routes=[
     path: '',
     component: ShoppingComponent,
     children: [
-      { path: 'producto/:id', component: ProductoComponent},
-      { path: 'inicio', component: InicioComponent },
-      { path: 'tienda', component: TiendaComponent },
-      { path: 'producto', component: ProductoComponent},
-      { path: 'nosotros', component: NosotrosComponent },
-      { path: 'contactanos', component: ContactanosComponent },
-    ],
+      { path: 'producto/:id', component: ProductoComponent, data: { animation : 'producto'}},
+      { path: 'inicio', component: InicioComponent, data: { animation : 'inicio'} },
+      { path: 'tienda', component: TiendaComponent, data: { animation : 'shopping'} },
+      { path: 'producto', component: ProductoComponent , data: { animation : 'producto'}},
+      { path: 'nosotros', component: NosotrosComponent, data: { animation : 'nosotros'} },
+      { path: 'contactanos', component: ContactanosComponent, data: { animation : 'contactanos'} },
+    ], data: { animation : 'shopping'}
   },
 ]
 

@@ -127,3 +127,19 @@
 </div>
 
     <!-- Stagger fallo explicacion pendiente -->
+
+<div class="row">
+    <h5> Animaciones entre componentes</h5>
+</div>
+
+<div class="row text-center mb-5">
+    <div class="col-md-6">
+        <button class="btn btn-primary" [routerLink]="'/clase/animaciones/componenteuno'"> Componente uno</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-primary" [routerLink]="'/clase/animaciones/componentedos'"> Componente dos</button>
+    </div>
+    <div [@routeAnimations]="prepareRoute(outlet)" class="ambiente-animacion">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+</div>

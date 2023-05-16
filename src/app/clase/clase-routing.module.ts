@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ClaseComponent } from "./clase.component";
 import { RuteoEjemploComponent } from "./routing/ruteo-ejemplo/ruteo-ejemplo.component";
+import { ComponenteunoComponent } from "./animaciones/componenteuno/componenteuno.component";
+import { ComponentedosComponent } from "./animaciones/componentedos/componentedos.component";
 
 
 const routes : Routes=[
@@ -24,8 +26,12 @@ const routes : Routes=[
         component: ClaseComponent,
         children:[
               {path: 'ejemplo/:paramPorRuta', component: RuteoEjemploComponent},
-              {path: 'ejemplo', component: RuteoEjemploComponent}
+              {path: 'ejemplo', component: RuteoEjemploComponent},
+              {path: 'animaciones/componenteuno',component: ComponenteunoComponent,data:{animation : 'componenteuno'}},
+              {path: 'animaciones/componentedos',component: ComponentedosComponent,data:{animation : 'componentedos'}},
             ]
+        ,data:{animation : 'animations'}
+        
 
     }
 ]
